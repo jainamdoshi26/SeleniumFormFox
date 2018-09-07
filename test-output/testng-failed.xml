@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestNG]">
+  <test thread-count="5" name="Test Order(failed)">
+    <classes>
+      <class name="co.formfox.mcp.order.OrderTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="afterAllTest"/>
+          <include name="beforeEeveyTest"/>
+          <include name="beforeMethods"/>
+          <include name="afterClass"/>
+          <include name="loginLogoutTest"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- co.formfox.mcp.order.OrderTest -->
+    </classes>
+  </test> <!-- Test Order(failed) -->
+</suite> <!-- Failed suite [TestNG] -->

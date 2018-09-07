@@ -1,0 +1,7 @@
+<suite name="TestNG">
+	<test name="Test Order">
+		<classes>
+			<class name="co.formfox.mcp.order.OrderTest"/>
+		</classes>
+	</test>
+</suite>
