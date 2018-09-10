@@ -28,5 +28,7 @@ public class Constants {
 		public static String SEARCH_BUTTON_DONOR_ID = "//*[@id='orderPage']/div[1]/div[4]/form/div[1]/div/div[1]/div[2]/div[1]/div[1]/div/div/span";
 		public static String FIRST_NAME_TEXT_FIELD = "//*[@id='first-name']";
 		public static String LOGIN_MESSAGE = "//*[@id='toast-container']/div/div";
+		public static String MENU_HOVER = "//*[@id='personlist']";
+		public static String LOGOUT_LINK = "//*[@id='logout-list']";
 }
 

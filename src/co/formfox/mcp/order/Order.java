@@ -2,71 +2,59 @@ package co.formfox.mcp.order;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import co.formfox.mcp.paths.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class Order {
 
 	WebDriver driver;
-	/**
-	 *The methods invokes the browser driver.
-	 *@return The driver connection.
-	 */
-	public void InvokeChromeBrowser(String url) {
-		try {
-			System.setProperty("webdriver.chrome.driver","C:\\Users\\Tudip\\Documents\\Automation Project\\Driver\\chromedriver_win32\\chromedriver.exe");
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(300, TimeUnit.SECONDS);
-			driver.get(url);
-			Thread.sleep(10000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
+	@BeforeTest
+	public void beforeEeveyTest() {
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\Tudip\\Documents\\Automation Project\\Driver\\chromedriver_win32\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(300, TimeUnit.SECONDS);
+		System.out.println("Before every Test (2)");
 	}
 
-	public void ClickElementByXpath(String path) {
-		driver.findElement(By.xpath(path)).click();
+	@BeforeClass
+	public void beforeClass() throws InterruptedException {
+		driver.get("http://63.236.215.40/webapp/#/login?clientFolder=RAPromotionQATest");
+		Thread.sleep(3000);
+		System.out.println("Before every class (2)");
 	}
 	
-	public void SendKeysByXpath(String path, String message) {
-		driver.findElement(By.xpath(path)).sendKeys(message);
-	}
-	
-	public static void main(String[] args) throws InterruptedException {
-		try {
-			Order order1=new Order();
-			String firstname = "Peter";
-			//String lastname = "Parker";
-			String searchcomp = "Four";
-			String donorid = "654239518";
-			String path="http://63.236.215.40/webapp/#/login?clientFolder=RAPromotionQATest";
-			order1.InvokeChromeBrowser(path);
-			order1.SendKeysByXpath(Constants.USERNAME_TEXT_FIELD,"Masterweb");
-			order1.SendKeysByXpath(Constants.PASSWORD_TEXT_FIELD,"Test12345");
-			order1.ClickElementByXpath(Constants.LOGIN_BUTTON);
-			order1.ClickElementByXpath(Constants.ORDER_TAB);
-			Thread.sleep(3000);	
-			order1.ClickElementByXpath(Constants.SELECT_COMPANY_OPTION);
-			Thread.sleep(3000);
-			order1.ClickElementByXpath(Constants.REASON_TEXT_FIELD);
-			order1.ClickElementByXpath(Constants.SELECT_REASON_COMPANY);
-			order1.ClickElementByXpath(Constants.POINT_OF_CARE_TEST);
-			order1.ClickElementByXpath(Constants.SERVICE_ORDER_CONFIRM);
-			Thread.sleep(3000);
-			order1.ClickElementByXpath(Constants.NEXT_BUTTON_ORDER_PAGE_1);
-			order1.ClickElementByXpath(Constants.DONOR_ID);
-			order1.SendKeysByXpath(Constants.DONOR_ID, donorid);
-			order1.ClickElementByXpath(Constants.SEARCH_BUTTON_DONOR_ID);
-			Thread.sleep(3000);
-			order1.SendKeysByXpath(Constants.FIRST_NAME_TEXT_FIELD,firstname);
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
+	@Test
+	public void orderPage1() {
+		System.out.println("Order Page 1");
 	}
 
+	@Test(dependsOnMethods = {"orderPage1"})
+	public void orderPage2() {
+		System.out.println("Order Page 2");
+	}
+
+	@Test(dependsOnMethods = {"orderPage2"})
+	public void orderPage3() {
+		System.out.println("Order Page 3");
+	}
+	
+	@AfterClass
+	public void afterClass() {
+		System.out.println("After every class (2)");
+		driver.close();
+	}
+
+	@AfterTest
+	public void afterAllTest() throws InterruptedException {
+		System.out.println("After every Test (2)");		
+		driver.quit();
+	}
 }

@@ -1,7 +1,13 @@
-<suite name="TestNG">
-	<test name="Test Order">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestNG" parallel="tests">
+	<test name="Login - Logout">
 		<classes>
-			<class name="co.formfox.mcp.order.OrderTest"/>
+			<class name="co.formfox.mcp.order.LoginAndLogout"/>
+		</classes>
+	</test>
+	<test name="Order">
+		<classes>
+			<class name="co.formfox.mcp.order.Order"/>
 		</classes>
 	</test>
 </suite>
