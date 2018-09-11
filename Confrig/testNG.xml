@@ -1,10 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="TestNG" parallel="tests">
-	<test name="Login - Logout">
-		<classes>
-			<class name="co.formfox.mcp.order.LoginAndLogout"/>
-		</classes>
-	</test>
+<suite name="TestNG">
 	<test name="Order">
 		<classes>
 			<class name="co.formfox.mcp.order.Order"/>

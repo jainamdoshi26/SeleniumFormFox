@@ -1,5 +1,6 @@
 package co.formfox.mcp.order;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,12 +13,15 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import co.formfox.mcp.events.events;
 import co.formfox.mcp.paths.Constants;
 
 public class LoginAndLogout {
 
 	WebDriver driver;
-	
+	events eventCall=new events();
+
 	@BeforeTest
 	public void beforeEeveyTest() {
 		System.setProperty("webdriver.chrome.driver",
@@ -30,7 +34,8 @@ public class LoginAndLogout {
 
 	@BeforeClass
 	public void beforeClass() throws InterruptedException {
-		driver.get("http://63.236.215.40/webapp/#/login?clientFolder=RAPromotionQATest");
+		String URL="http://63.236.215.40/webapp/#/login?clientFolder=RAPromotionQATest";
+		driver.get(URL);
 		Thread.sleep(3000);
 		System.out.println("Before every class");
 	}
@@ -42,13 +47,10 @@ public class LoginAndLogout {
 	
 	@Test(priority=1)
 	public void testLoginFunctionality() throws InterruptedException {
-		driver.findElement(By.xpath(Constants.USERNAME_TEXT_FIELD)).sendKeys("Masterweb");
-		driver.findElement(By.xpath(Constants.PASSWORD_TEXT_FIELD)).sendKeys("Test12345");
-		driver.findElement(By.xpath(Constants.LOGIN_BUTTON)).click();
+		eventCall.sendKeysToElementByXpath(Constants.USERNAME_TEXT_FIELD,"Masterweb");
+		eventCall.sendKeysToElementByXpath(Constants.PASSWORD_TEXT_FIELD,"Test12345");
+		eventCall.clickOnElementByXpath(Constants.LOGIN_BUTTON);		
 		Thread.sleep(3000);
-//		WebElement confirmationMessage= driver.findElement(By.xpath(Constants.LOGIN_MESSAGE));
-//		Assert.assertEquals(confirmationMessage.getText(), "Logged in successfully.");
-//		Assert.assertEquals(By.xpath(Constants.LOGOUT_LINK),"Logout");
 		if(driver.findElement(By.xpath(Constants.MENU_HOVER)).isDisplayed()== true) {
 		System.out.println("Test Cases 1 passes");
 		}
@@ -61,7 +63,7 @@ public class LoginAndLogout {
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(By.xpath(Constants.MENU_HOVER));
 		action.moveToElement(we).build().perform();
-		driver.findElement(By.xpath(Constants.LOGOUT_LINK)).click();
+		eventCall.clickOnElementByXpath(Constants.LOGOUT_LINK);	
 		System.out.println("Test case 2 passed");
 	}
 
