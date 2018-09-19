@@ -3,17 +3,17 @@
 <suite name="Failed suite [TestNG]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Order(failed)">
     <classes>
-      <class name="co.formfox.mcp.order.Order">
+      <class name="co.formfox.mcp.testCases.OrderTestCase">
         <methods>
-          <include name="afterAllTest"/>
-          <include name="beforeEeveyTest"/>
-          <include name="beforeClass"/>
-          <include name="orderPage3"/>
           <include name="afterClass"/>
           <include name="orderPage1"/>
+          <include name="beforeEeveyTest"/>
+          <include name="orderPage3"/>
+          <include name="afterAllTest"/>
+          <include name="beforeClass"/>
           <include name="orderPage2"/>
         </methods>
-      </class> <!-- co.formfox.mcp.order.Order -->
+      </class> <!-- co.formfox.mcp.testCases.OrderTestCase -->
     </classes>
   </test> <!-- Order(failed) -->
 </suite> <!-- Failed suite [TestNG] -->

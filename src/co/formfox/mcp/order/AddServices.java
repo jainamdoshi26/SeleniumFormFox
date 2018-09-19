@@ -1,15 +1,13 @@
-package co.formfox.mcp.events;
+package co.formfox.mcp.order;
 
-import org.openqa.selenium.WebDriver;
-
+import co.formfox.mcp.events.events;
 import co.formfox.mcp.paths.Constants;
 
 /**
  * Purpose: Is to Add the Services in the order.
  */
-public class addServices {
+public class AddServices {
 
-	WebDriver driver;
 	events eventCall = new events();
 
 	/**
@@ -21,7 +19,7 @@ public class addServices {
 		Thread.sleep(3000);
 		eventCall.clickOnElementByXpath(Constants.LAB_ACCOUNT);
 		eventCall.clickOnElementByXpath(Constants.SELECT_LAB_ACCOUNT_PAML);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		eventCall.clickOnElementByXpath(Constants.ADD_BUTTON_DRUG_TEST);
 	}
 

@@ -1,16 +1,13 @@
 package co.formfox.mcp.events;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 import Driver.ReturnDriver;
 
 /**
- * Various activity like click, send keys and navigating to the URL is written
- * in this class
+ * Various activity like click, send keys is written in this class
  */
 public class events {
-
 	
 	/**
 	 * Is used to perform a click event using the Xpath of the element.

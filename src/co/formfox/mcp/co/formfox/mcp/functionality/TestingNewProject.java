@@ -55,7 +55,7 @@ public class TestingNewProject {
 			order1.ClickElementByXpath(Constants.REASON_TEXT_FIELD);
 			order1.ClickElementByXpath(Constants.SELECT_REASON_COMPANY);
 //			order1.ClickElementByXpath(Constants.POINT_OF_CARE_TEST);
-			order1.ClickElementByXpath(Constants.SERVICE_ORDER_CONFIRM);
+			order1.ClickElementByXpath(Constants.SERVICE_ORDER_CONFIRM_BUTTON);
 			Thread.sleep(3000);
 			order1.ClickElementByXpath(Constants.NEXT_BUTTON_ORDER_PAGE_1);
 			order1.ClickElementByXpath(Constants.DONOR_ID);

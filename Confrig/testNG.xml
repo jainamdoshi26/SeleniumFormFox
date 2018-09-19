@@ -2,7 +2,7 @@
 <suite name="TestNG">
 	<test name="Order">
 		<classes>
-			<class name="co.formfox.mcp.order.Order"/>
+			<class name="co.formfox.mcp.testCases.OrderTestCase"/>
 		</classes>
 	</test>
 </suite>
