@@ -1,4 +1,4 @@
-package co.formfox.mcp.co.formfox.mcp.functionality;
+package co.formfox.mcp.Example;
 
 import java.util.concurrent.TimeUnit;
 
@@ -58,8 +58,8 @@ public class TestingNewProject {
 			order1.ClickElementByXpath(Constants.SERVICE_ORDER_CONFIRM_BUTTON);
 			Thread.sleep(3000);
 			order1.ClickElementByXpath(Constants.NEXT_BUTTON_ORDER_PAGE_1);
-			order1.ClickElementByXpath(Constants.DONOR_ID);
-			order1.SendKeysByXpath(Constants.DONOR_ID, donorid);
+			order1.ClickElementByXpath(Constants.DONOR_ID_TEXT_FIELD);
+			order1.SendKeysByXpath(Constants.DONOR_ID_TEXT_FIELD, donorid);
 			order1.ClickElementByXpath(Constants.SEARCH_BUTTON_DONOR_ID);
 			Thread.sleep(3000);
 			order1.SendKeysByXpath(Constants.FIRST_NAME_TEXT_FIELD,firstname);

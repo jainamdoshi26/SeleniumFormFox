@@ -25,7 +25,7 @@ public class Constants {
 	public static String SERVICE_ORDER_CONFIRM_BUTTON = "//*[@id='orderPage']/div[1]/div[3]/form/div[2]/div/div[3]/div[2]/button";
 	public static String NEXT_BUTTON_ORDER_PAGE_1 = "//*[@id='orderPage']/div[1]/div[3]/form/div[3]/div[1]/div[3]/button";
 	public static String CANCEL_BUTTON_ORDER_PAGE_1 = "//*[@id='orderPage']/div[1]/div[3]/form/div[3]/div[1]/div[1]/button";
-	public static String DONOR_ID = "//*[@id='donor-id']";
+	public static String DONOR_ID_TEXT_FIELD = "//*[@id='donor-id']";
 	public static String SEARCH_BUTTON_DONOR_ID = "//*[@id='orderPage']/div[1]/div[4]/form/div[1]/div/div[1]/div[2]/div[1]/div[1]/div/div/span";
 	public static String FIRST_NAME_TEXT_FIELD = "//*[@id='first-name']";
 	public static String LOGIN_MESSAGE = "//*[@id='toast-container']/div/div";

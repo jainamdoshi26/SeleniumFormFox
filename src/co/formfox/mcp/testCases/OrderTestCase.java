@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import Driver.ReturnDriver;
 import co.formfox.mcp.login_logout.Login_Logout;
-import co.formfox.mcp.order.OrderPage;
+import co.formfox.mcp.pages.OrderPage;
 
 public class OrderTestCase {
 
@@ -30,11 +30,11 @@ public class OrderTestCase {
 	@Test
 	public void orderPage1() throws InterruptedException {
 		orderObj.orderPage1();
+		orderObj.orderPage2();
 	}
 
 	@Test(dependsOnMethods = {"orderPage1"})
-	public void orderPage2() {
-		
+	public void orderPage2() throws InterruptedException {
 	}
 
 	@Test(dependsOnMethods = {"orderPage2"})
