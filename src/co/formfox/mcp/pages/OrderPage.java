@@ -1,10 +1,17 @@
 package co.formfox.mcp.pages;
 
-import org.openqa.selenium.By;
+import java.io.IOException;
+import java.util.List;
 
+import org.openqa.selenium.By;
+import org.testng.Assert;
+
+import Driver.ReadCSVWithScanner;
 import Driver.ReturnDriver;
+import Driver.assignData;
 import co.formfox.mcp.events.events;
 import co.formfox.mcp.paths.Constants;
+
 
 /**
  * Its a class provides orderPage1(), orderPage2(), orderPage3() functions.
@@ -13,7 +20,8 @@ import co.formfox.mcp.paths.Constants;
 public class OrderPage {
 	
 	events eventCall=new events();
-	
+	List<assignData> datalist=ReadCSVWithScanner.getDataList();
+		
 	/**
 	 * The Order Page 1 is filled using this function.
 	 * @throws InterruptedException
@@ -27,33 +35,87 @@ public class OrderPage {
 		Thread.sleep(3000);
 		eventCall.clickOnElementByXpath(Constants.SELECT_REASON_COMPANY);
 		Thread.sleep(3000);
-		addDrugTest();
+//		addDrugTest();
 		addAlcoholTest();
 		addBackgroundTest();
 		addPhysicalTest();
-		addPOCTTest();
+//		addPOCTTest();
 		Thread.sleep(1500);
 		eventCall.clickOnElementByXpath(Constants.SERVICE_ORDER_CONFIRM_BUTTON);
 		Thread.sleep(1500);
 		eventCall.clickOnElementByXpath(Constants.NEXT_BUTTON_ORDER_PAGE_1);
-		System.out.println("Order Page 1");
 		Thread.sleep(3000);
 	}
-	public void orderPage2() throws InterruptedException {
-		eventCall.clickOnElementByXpath(Constants.DONOR_ID_TEXT_FIELD);
-		eventCall.sendKeysToElementByXpath(Constants.DONOR_ID_TEXT_FIELD, "856327021");
+	
+	/**
+	 * The Order Page 2 is filled using this function.
+	 * @throws InterruptedException
+	 * @throws IOException 
+	 */
+	public void orderPage2() throws InterruptedException, IOException {
+//		List<assignData> listOfData = temdata.readCSV();
+		eventCall.sendKeysToElementByXpath(Constants.DONOR_ID_TEXT_FIELD, datalist.get(1).getSSN().toString());
 		eventCall.clickOnElementByXpath(Constants.SEARCH_BUTTON_DONOR_ID);
 		Thread.sleep(2000);
 		String firstName=ReturnDriver.getDriver().findElement(By.xpath(Constants.FIRST_NAME_TEXT_FIELD)).getAttribute("value");
 		if(firstName.isEmpty()) 
 		{
+			eventCall.sendKeysToElementByXpath(Constants.FIRST_NAME_TEXT_FIELD, datalist.get(1).getFirstName().toString());
+			eventCall.sendKeysToElementByXpath(Constants.LAST_NAME_TEXT_FIELD, datalist.get(1).getLastName().toString());
+			eventCall.sendKeysToElementByXpath(Constants.BIRTHDATE_TEXT_FIELD, datalist.get(1).getBirthdate().toString());
 			System.out.println("Adding new donor information");	
-			eventCall.sendKeysToElementByXpath(Constants.FIRST_NAME_TEXT_FIELD, "Peter");
-			eventCall.sendKeysToElementByXpath(Constants.LAST_NAME_TEXT_FIELD, "Parker");
-			eventCall.sendKeysToElementByXpath(Constants.BIRTHDATE_TEXT_FIELD, "11111995");
+			commonActivity();
+		}else
+		{
+		System.out.println("Order is pending for this donor in the system");	
+		commonActivity();
+		Thread.sleep(2000);
+		eventCall.clickOnElementByXpath(Constants.CONFIRM_BUTTON_ORDER_CONFIRMATION_POPUP);
+		Thread.sleep(2000);
 		}
-		eventCall.clickOnElementByXpath(Constants.FIND_A_COLLECTION_SITE_BUTTON);
 	}
+	
+	/**
+	 * The Order Page 3 is filled using this function.
+	 * @throws InterruptedException
+	 */
+	public void orderPage3() throws InterruptedException {
+		Thread.sleep(2000);
+		eventCall.sendKeysToElementByXpath(Constants.EMAIL_FORM_TEXT_FIELD_ORDER_PAGE_3, datalist.get(1).getEmailID().toString());
+		Thread.sleep(2000);
+		eventCall.clickOnElementByXpath(Constants.SEND_EMAIL_BUTTON_ORDER_PAGE_3);
+		Thread.sleep(2000);
+		eventCall.clickOnElementByXpath(Constants.NEXT_BUTTON_ORDER_PAGE_3);
+		Thread.sleep(3000);
+	}	
+	
+	public void orderPageBG() throws InterruptedException {
+		Thread.sleep(3000);
+		eventCall.clickOnElementByXpath(Constants.CONTINUE_BUTTON_ORDER_PAGE_BG);
+		Thread.sleep(3000);
+	}
+	
+	/**
+	 * Purpose: Used to fill the order expiration details.
+	 */
+	private void commonActivity() throws InterruptedException {
+		eventCall.clickOnElementByXpath(Constants.FIND_A_COLLECTION_SITE_BUTTON);
+		eventCall.sendKeysToElementByXpath(Constants.FIND_A_LOCATION_SEARCH, datalist.get(1).getSiteAddress().toString());
+		eventCall.clickOnElementByXpath(Constants.FIND_A_LOCATION_SEARCH_BUTTON);
+		Thread.sleep(2000);
+		eventCall.clickOnElementByXpath(Constants.SELECT_SITE);
+		Thread.sleep(2000);
+		eventCall.clickOnElementByXpath(Constants.TIME_ZONE_TEXT_FIELD);
+		Thread.sleep(2000);
+		eventCall.clickOnElementByXpath(Constants.SELECT_TIME_ZONE);
+		eventCall.sendKeysToElementByXpath(Constants.ORDER_EXPIRATION_DATE_TEXT_FIELD, "11112022");
+		eventCall.sendKeysToElementByXpath(Constants.PREFERRED_SCHEDULE_DATE_TEXT_FIELD, "11112021");
+		eventCall.sendKeysToElementByXpath(Constants.COMMENTS_TEXT_AREA, "Comments are in this field.");
+		Thread.sleep(2000);
+		eventCall.clickOnElementByXpath(Constants.SUBMIT_BUTTON_ORDER_PAGE_2);
+		Thread.sleep(5000);
+	}
+
 	
 	/**
 	 * Purpose: Is to Add Drug Test.

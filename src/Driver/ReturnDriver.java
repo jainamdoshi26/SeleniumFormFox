@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ReturnDriver {
 	
 	static WebDriver driver = setDriver();
-	
+		
 	/**
 	 *It sets the driver property and returns driver object. 
 	 */
@@ -33,11 +33,4 @@ public class ReturnDriver {
 		return driver;
 	}
 	
-//	public static void close() {
-//		driver.close();
-//	}
-//	
-//	public static void quit() {
-//		driver.quit();
-//	}
 }

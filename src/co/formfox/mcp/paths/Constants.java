@@ -5,9 +5,9 @@ package co.formfox.mcp.paths;
  * 
  * @Syntex: Constants."variable_name"
  */
-
 public class Constants {
 
+	public static String CSVFILE = "C:/Users/Tudip/Downloads/csvdata.csv";
 	public static String URL = "http://63.236.215.40/webapp/#/login?clientFolder=RAPromotionQATest";
 	public static String USERNAME_TEXT_FIELD = "//*[@id='inputEmail3']";
 	public static String PASSWORD_TEXT_FIELD = "//*[@id='inputPassword3']";
@@ -21,7 +21,7 @@ public class Constants {
 	public static String ALCOHOL_TEST_TAB = "//*[@id='orderPage']/div[1]/div[3]/form/div[1]/div[2]/div[2]/button[2]";
 	public static String PHYSICAL_EXAM_TAB = "//*[@id='orderPage']/div[1]/div[3]/form/div[1]/div[2]/div[2]/button[3]";
 	public static String POINT_OF_CARE_TEST_TAB = "//*[@id='orderPage']/div[1]/div[3]/form/div[1]/div[2]/div[2]/button[4]";
-	public static String BACKGROUND_CHECK_TAB = "//*[@id='orderPage']/div[1]/div[3]/form/div[1]/div[2]/div[2]/button[5]";
+	public static String BACKGROUND_CHECK_TAB = "//*[@id='orderPage']/div[1]/div[3]/form/div[1]/div[2]/div[2]/button[4]";
 	public static String SERVICE_ORDER_CONFIRM_BUTTON = "//*[@id='orderPage']/div[1]/div[3]/form/div[2]/div/div[3]/div[2]/button";
 	public static String NEXT_BUTTON_ORDER_PAGE_1 = "//*[@id='orderPage']/div[1]/div[3]/form/div[3]/div[1]/div[3]/button";
 	public static String CANCEL_BUTTON_ORDER_PAGE_1 = "//*[@id='orderPage']/div[1]/div[3]/form/div[3]/div[1]/div[1]/button";
@@ -51,4 +51,20 @@ public class Constants {
 	public static String PREFERRED_SCHEDULE_TIME_TEXT_FIELD = "//*[@id='time1']";
 	public static String COMMENTS_TEXT_AREA = "//*[@id='comments']";
 	public static String SUBMIT_BUTTON_ORDER_PAGE_2 = "//*[@id='orderPage']/div[1]/div[4]/form/div[7]/div[1]/div[3]/button";
+	public static String FIND_A_LOCATION_SEARCH="//*[@id='address-input']";
+	public static String SELECT_SITE = "//*[@id='findLocationModal']/div/div/div[2]/div/div[2]/div[2]/div[1]/div/div[4]/button";
+	public static String FIND_A_LOCATION_SEARCH_BUTTON = "//*[@id='findLocationModal']/div/div/div[2]/div/div[2]/div[1]/div[2]/div/span/button";
+	public static String EMAIL_FORM_TEXT_FIELD_ORDER_PAGE_3 = "//*[@id='orderPage']/div[1]/form/div[2]/div/div[4]/div[1]/div/div[2]/input";
+	public static String SEND_EMAIL_BUTTON_ORDER_PAGE_3 = "//*[@id='orderPage']/div[1]/form/div[2]/div/div[4]/div[2]/div[2]/button";
+	public static String NEXT_BUTTON_ORDER_PAGE_3 = "//*[@id='orderPage']/div[1]/form/div[2]/div/div[6]/div/div[2]/button";
+	public static String CONFIRM_BUTTON_ORDER_CONFIRMATION_POPUP = "//*[@id='pendingRecordsConfirm']";
+	public static String CONTINUE_BUTTON_ORDER_PAGE_BG = "//*[@id='orderPage']/div[1]/form/div[2]/div/div[1]/div/div[2]/button";
+	public static String TRACKING_PAGE = "//*[@id='headerNavBar']/ul[1]/li[3]/a";
+	public static String SEARCH_DROPDOWN_TRACKING_PAGE = "//*[@id='trackPage']/div[1]/div[1]/div[2]/div/form/div[1]/dropdrown/div";
+	public static String SEARCH_SSN_TRACKING_PAGE = "//*[@id='trackPage']/div[1]/div[1]/div[2]/div/form/div[1]/dropdrown/div/ul/li[5]";
+	public static String SEARCH_TEXT_FIELD_TRACKING_PAGE = "//*[@id='trackPage']/div[1]/div[1]/div[2]/div/form/div[2]/input";
+	public static String SEARCH_BUTTON_TRACKING_PAGE = "//*[@id='trackPage']/div[1]/div[1]/div[2]/div/form/div[2]/span";
+	public static String SSN_VERIFY_TRACKING_PAGE = "//*[@id='trackPage']/div[2]/table/tbody/tr[1]/td[2]/span";
+	public static String GENERAL_INFORMATION_TAB = "//*[@id='personnelDetails']/modal/div/div/div/div[2]/modal-content/div[1]/div[2]/div[1]";
+	public static String EDIT_GENERAL_INFORMATION_TAB = "//*[@id='personnelDetails']/modal/div/div/div/div[2]/modal-content/div[2]/div/personnelinfo/div/form/div[1]/div[2]/img";
 }

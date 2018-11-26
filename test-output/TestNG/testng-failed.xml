@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [TestNG]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Order(failed)">
+  <test thread-count="5" name="Tracking(failed)">
     <classes>
-      <class name="co.formfox.mcp.testCases.OrderTestCase">
+      <class name="co.formfox.mcp.testCases.TrackingCase">
         <methods>
-          <include name="afterClass"/>
-          <include name="orderPage1"/>
-          <include name="beforeEeveyTest"/>
-          <include name="orderPage3"/>
-          <include name="afterAllTest"/>
-          <include name="beforeClass"/>
-          <include name="orderPage2"/>
+          <include name="Tracking"/>
         </methods>
-      </class> <!-- co.formfox.mcp.testCases.OrderTestCase -->
+      </class> <!-- co.formfox.mcp.testCases.TrackingCase -->
     </classes>
-  </test> <!-- Order(failed) -->
+  </test> <!-- Tracking(failed) -->
 </suite> <!-- Failed suite [TestNG] -->

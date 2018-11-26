@@ -1,8 +1,23 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="TestNG">
+	<test name="Login">
+		<classes>
+			<class name="co.formfox.mcp.testCases.LoginCase"/>
+		</classes>
+	</test>
 	<test name="Order">
 		<classes>
 			<class name="co.formfox.mcp.testCases.OrderTestCase"/>
+		</classes>
+	</test>
+	<test name="Tracking">
+		<classes>
+			<class name="co.formfox.mcp.testCases.TrackingCase"/>
+		</classes>
+	</test>
+	<test name="Logout">
+		<classes>
+			<class name="co.formfox.mcp.testCases.LogoutCase"/>
 		</classes>
 	</test>
 </suite>
