@@ -15,6 +15,11 @@
 			<class name="co.formfox.mcp.testCases.TrackingCase"/>
 		</classes>
 	</test>
+	<test name="Navigation Test">
+		<classes>
+			<class name="co.formfox.mcp.testCases.AllNavigationCase"/>
+		</classes>
+	</test>
 	<test name="Logout">
 		<classes>
 			<class name="co.formfox.mcp.testCases.LogoutCase"/>

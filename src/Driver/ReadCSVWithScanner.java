@@ -3,15 +3,8 @@ package Driver;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import co.formfox.mcp.paths.Constants;
-
 import java.io.*;
 
 public class ReadCSVWithScanner {
@@ -59,6 +52,14 @@ public class ReadCSVWithScanner {
 					tmp.setEmailID(data);
 				else if (index == 10)
 					tmp.setSiteAddress(data);
+				else if (index == 11)
+					tmp.setEmployerID(data);
+				else if (index == 12)
+					tmp.setDriverID(data);
+				else if (index == 13)
+					tmp.setAlternateID(data);
+				else if (index == 14)
+					tmp.setHireDate(data);
 				else
 					System.out.println("invalid data::" + data);
 				index++;

@@ -4,30 +4,47 @@ import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 import Driver.ReadCSVWithScanner;
 import Driver.ReturnDriver;
 import Driver.assignData;
 import co.formfox.mcp.events.events;
+import co.formfox.mcp.events.navigationEvent;
 import co.formfox.mcp.paths.Constants;
 
 
 /**
- * Its a class provides orderPage1(), orderPage2(), orderPage3() functions.
+ * Its a class places order.
  *
  */
 public class OrderPage {
 	
+	navigationEvent tempnavigation=new navigationEvent();
 	events eventCall=new events();
 	List<assignData> datalist=ReadCSVWithScanner.getDataList();
-		
+
+	/**
+	 * Calls orderPage1(), orderPage2(), orderPage3(), orderPageBG().
+	 *
+	 */
+	public void placeOrder() throws InterruptedException, IOException {
+		orderPage1();
+		System.out.println("Order Page 1");
+		orderPage2();
+		System.out.println("Order Page 2");
+		orderPage3();
+		System.out.println("Order Page 3");
+		orderPageBG();
+		System.out.println("Order placed successfully");
+		Thread.sleep(3000);
+	}
+	
 	/**
 	 * The Order Page 1 is filled using this function.
 	 * @throws InterruptedException
 	 */
 	public void orderPage1() throws InterruptedException {
-		eventCall.clickOnElementByXpath(Constants.ORDER_PAGE);
+		tempnavigation.navigationPageEvent("Order");
 		Thread.sleep(5000);
 		eventCall.clickOnElementByXpath(Constants.SELECT_COMPANY_OPTION);
 		Thread.sleep(3000);
@@ -89,6 +106,10 @@ public class OrderPage {
 		Thread.sleep(3000);
 	}	
 	
+	/**
+	 * The Background Order Page.
+	 * @throws InterruptedException
+	 */
 	public void orderPageBG() throws InterruptedException {
 		Thread.sleep(3000);
 		eventCall.clickOnElementByXpath(Constants.CONTINUE_BUTTON_ORDER_PAGE_BG);

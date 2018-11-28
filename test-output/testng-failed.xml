@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [TestNG]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Tracking(failed)">
+  <test thread-count="5" name="Navigation Test(failed)">
     <classes>
-      <class name="co.formfox.mcp.testCases.TrackingCase">
+      <class name="co.formfox.mcp.testCases.AllNavigationCase">
         <methods>
-          <include name="Tracking"/>
+          <include name="testAllNavigation"/>
         </methods>
-      </class> <!-- co.formfox.mcp.testCases.TrackingCase -->
+      </class> <!-- co.formfox.mcp.testCases.AllNavigationCase -->
     </classes>
-  </test> <!-- Tracking(failed) -->
+  </test> <!-- Navigation Test(failed) -->
 </suite> <!-- Failed suite [TestNG] -->

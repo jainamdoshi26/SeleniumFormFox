@@ -1,7 +1,6 @@
 package co.formfox.mcp.events;
 
 import org.openqa.selenium.By;
-
 import Driver.ReturnDriver;
 
 /**
@@ -23,5 +22,5 @@ public class events {
 	public void sendKeysToElementByXpath(String path, String message) {
 		ReturnDriver.getDriver().findElement(By.xpath(path)).sendKeys(message);
 	}
-
+	
 }

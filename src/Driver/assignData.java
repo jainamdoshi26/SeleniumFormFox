@@ -1,11 +1,7 @@
 package Driver;
 
-import org.testng.annotations.Test;
-
-
 public class assignData {
 	
-		private String id;
 		private String birthdate;
 		private String lastname;
 		private String firstname;
@@ -17,6 +13,10 @@ public class assignData {
 		private String password;
 		private String emailid;
 		private String siteaddress;
+		private String employerID;
+		private String driverID;
+		private String alternateID;
+		private String hiredate;
 		
 		public String getSSN() {
 			return SSN;
@@ -83,5 +83,29 @@ public class assignData {
 		}
 		public void setSiteAddress(String siteaddress) {
 			this.siteaddress = siteaddress;
+		}
+		public String getEmployerID() {
+			return employerID;
+		}
+		public void setEmployerID(String employerID) {
+			this.employerID = employerID;
+		}
+		public String getDriverID() {
+			return driverID;
+		}
+		public void setDriverID(String driverID) {
+			this.driverID = driverID;
+		}
+		public String getAlternateID() {
+			return alternateID;
+		}
+		public void setAlternateID(String alternateID) {
+			this.alternateID = alternateID;
+		}
+		public String getHireDate() {
+			return hiredate;
+		}
+		public void setHireDate(String hiredate) {
+			this.hiredate = hiredate;
 		}
 	}

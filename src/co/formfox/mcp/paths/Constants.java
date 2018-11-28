@@ -67,4 +67,15 @@ public class Constants {
 	public static String SSN_VERIFY_TRACKING_PAGE = "//*[@id='trackPage']/div[2]/table/tbody/tr[1]/td[2]/span";
 	public static String GENERAL_INFORMATION_TAB = "//*[@id='personnelDetails']/modal/div/div/div/div[2]/modal-content/div[1]/div[2]/div[1]";
 	public static String EDIT_GENERAL_INFORMATION_TAB = "//*[@id='personnelDetails']/modal/div/div/div/div[2]/modal-content/div[2]/div/personnelinfo/div/form/div[1]/div[2]/img";
+	public static String EMPLOYER_ID_TEXT_FIELD_TRACKING_PAGE = "//*[@id='personnelDetails']/modal/div/div/div/div[2]/modal-content/div[2]/div/personnelinfo/div/form/div[2]/div[1]/div[2]/input";
+	public static String DRIVER_ID_TEXT_FIELD_TRACKING_PAGE = "//*[@id='personnelDetails']/modal/div/div/div/div[2]/modal-content/div[2]/div/personnelinfo/div/form/div[2]/div[2]/div[2]/input";
+	public static String ALTERNATE_ID_TEXT_FIELD_TRACKING_PAGE = "//*[@id='personnelDetails']/modal/div/div/div/div[2]/modal-content/div[2]/div/personnelinfo/div/form/div[2]/div[4]/div[2]/input";
+	public static String HIRE_DATE_TEXT_FIELD_TRACKING_PAGE = "//*[@id='hireDatePicker']/my-date-picker/div/div/input";
+	public static String SAVE_BUTTON_GENERAL_INFORMATION_POPUP_TRACKING_PAGE = "//*[@id='personnelDetails']/modal/div/div/div/div[2]/modal-content/div[2]/div/personnelinfo/div/form/div[7]/div[2]/div/button";
+	public static String SITE_SEARCH_PAGE = "//*[@id='headerNavBar']/ul[1]/li[1]/a";
+	public static String COMPLETED_PAGE = "//*[@id='headerNavBar']/ul[1]/li[4]/a";
+	public static String RANDOM_POOLS_PAGE = "//*[@id='headerNavBar']/ul[1]/li[5]/a";
+	public static String POOLS_PAGE = "//*[@id='poolsPage']/div[1]/ul/li[1]";
+	public static String PERSONNEL_PAGE = "//*[@id='poolsPage']/div[1]/ul/li[2]";
+	public static String REPORTS_PAGE = "//*[@id='headerNavBar']/ul[1]/li[6]/a";
 }
